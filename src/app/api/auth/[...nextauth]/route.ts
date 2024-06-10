@@ -9,7 +9,7 @@ import { authOptions } from '@/libs/auth'
  * Please refer https://next-auth.js.org/tutorials/refresh-token-rotation link for a reference.
  */
 
-secret: process.env.SECRET
 const handler = NextAuth(authOptions)
+secret: process.env.NEXTAUTH_SECRET,
 
 export { handler as GET, handler as POST }
