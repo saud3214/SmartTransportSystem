@@ -2,7 +2,7 @@
 const nextConfig = {
   basePath: process.env.BASEPATH,
   env: {
-    NEXTAUTH_URL: 'https://smart-transport-system.vercel.app/api/auth',
+    NEXTAUTH_URL: {basePath}/api/auth,
     NEXTAUTH_SECRET: 'e0375c5b670f728d82a24a08a1cfcda7',
 },
   redirects: async () => {
