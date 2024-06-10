@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: process.env.BASEPATH,
+  env: {
+    NEXTAUTH_URL: 'https://smart-transport-system.vercel.app/',
+    NEXTAUTH_SECRET: 'e0375c5b670f728d82a24a08a1cfcda7',
+},
   redirects: async () => {
     return [
       {
