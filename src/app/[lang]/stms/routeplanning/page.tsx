@@ -3,9 +3,7 @@ import * as React from 'react'
 import { useState } from 'react'
 import type { ChangeEvent } from 'react'
 
-import { Grid, Typography, Box, Button, Radio, InputAdornment, Switch, Tooltip } from '@mui/material'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
+import { Grid, Typography, Box, Button, Radio, InputAdornment, Switch, Tooltip, List, ListItem } from '@mui/material'
 import ListItemText from '@mui/material/ListItemText'
 import MenuItem from '@mui/material/MenuItem'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -191,7 +189,6 @@ const StmsRouteplanning = () => {
               </Grid>
               <Grid xs={2} className='flex items-end justify-end'>
                 <Button variant='contained' className='h-20 rounded-none  bg-gradient-to-r from-[#85c933] to-[#337a34]'>
-                  {' '}
                   <i className={'tabler-plus'} /> Add Route
                 </Button>
               </Grid>
