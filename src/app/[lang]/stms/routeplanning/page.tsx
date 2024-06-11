@@ -170,33 +170,34 @@ const StmsRouteplanning = () => {
           backgroundColor: '#f0f3ee'
         }}
       >
-        <Grid item xs={12}>
-          <Box className='flex flex-col bg-[#f7fdea]  p-0'>
-            <Grid container justifyContent='end' alignItems='center' className=''>
-              <Grid item xs={8} spacing={0} className='flex flex-row items-center justify-center gap-4 '>
-                <Box className='flex'>
-                  <i className={'tabler-route'} />
-                  <Typography variant='h5'>Route </Typography>
-                </Box>
-                <Box className='flex'>
-                  <i className={'tabler-wallpaper'} />
-                  <Typography variant='h5'>Planning </Typography>
-                </Box>
-                <Box className='flex'>
-                  <i className={'tabler-viewfinder'} />
-                  <Typography variant='h5'>Board View </Typography>
-                </Box>
-              </Grid>
-              <Grid xs={2} className='flex items-end justify-end'>
-                <Button variant='contained' className='h-20 rounded-none  bg-gradient-to-r from-[#85c933] to-[#337a34]'>
-                  <i className={'tabler-plus'} /> Add Route
-                </Button>
-              </Grid>
+        <Grid>
+          <Box className='bg-[#f7fdea] w-full flex container'>
+            <Grid lg={10} xs={10} className='flex flex-row flex-wrap items-center justify-center w-full gap-4'>
+              <Box className='flex'>
+                <i className={'tabler-route'} />
+                <Typography variant='h5'>Route </Typography>
+              </Box>
+              <Box className='flex'>
+                <i className={'tabler-wallpaper'} />
+                <Typography variant='h5'>Planning </Typography>
+              </Box>
+              <Box className='flex'>
+                <i className={'tabler-viewfinder'} />
+                <Typography variant='h5'>Board View </Typography>
+              </Box>
+            </Grid>
+            <Grid xs={2} lg={2} className='flex items-end justify-end '>
+              <Button
+                variant='contained'
+                className='lg:h-20 h-16 rounded-none  bg-gradient-to-r from-[#85c933] to-[#337a34]'
+              >
+                <i className={'tabler-plus'} /> Add Route
+              </Button>
             </Grid>
           </Box>
-          <Box className='flex flex-col bg-[#f7fdea]  p-0 border-b-[#337a34]'>
-            <Grid container justifyContent='end' alignItems='center'>
-              <Grid item xs={3} spacing={4} className='flex flex-col items-center justify-center gap-0 '>
+          <Box className='flex  flex-col bg-[#f7fdea]  p-0 border-b-[#337a34]'>
+            <Grid container className='flex flex-col lg:flex-row'>
+              <Grid item xs={12} lg={3} spacing={4} className='flex flex-col '>
                 <Box className='flex w-full  justify-center bg-gradient-to-r from-[#85c933] to-[#337a34]'>
                   <Typography variant='h5' className='p-4 text-2xl font-bold text-white uppercase'>
                     Summary
@@ -338,7 +339,7 @@ const StmsRouteplanning = () => {
                   </ListItem>
                 </List>
               </Grid>
-              <Grid xs={9}>
+              <Grid xs={12} lg={9}>
                 <MapContainer />
               </Grid>
             </Grid>
@@ -861,17 +862,17 @@ const StmsRouteplanning = () => {
           </TableContainer>
         </Grid>
       </Grid>
-      <Grid container spacing={2} className='flex flex-col'>
+      <Grid container spacing={2} className='flex flex-col '>
         <Grid item xs={12} className='flex items-center gap-1 my-3'>
           <Typography variant='h5' className='font-bold text-primary'>
             TimeLine
           </Typography>
         </Grid>
-        <Grid item xs={12} className='flex items-end gap-5'>
-          <Grid item lg={3}>
+        <Grid item xs={12} className='flex flex-col items-baseline gap-5 md:items-end md:flex-row'>
+          <Grid item lg={3} xs={12} className='flex '>
             <CustomTextField label='Specify Start Time ' placeholder='Enter When to start' className='w-full' />
           </Grid>
-          <Grid item lg={9} className='flex gap-6'>
+          <Grid item lg={9} xs={12} className='flex flex-wrap gap-6'>
             <Box className='flex items-center gap-2'>
               <Dot color='#CBF2DC' />
               <Typography variant='h5'>Reach to Pickup</Typography>
@@ -891,136 +892,156 @@ const StmsRouteplanning = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container columns={16} className='h-32 mt-5'>
-        <Grid lg={1} className='h-full bg-[#CBF2DC] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Reach to Pickup Point <br />
-                10 KMs <br />
-                20 Mins
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full bg-[#CBF2DC]'></Button>
-          </Tooltip>
+      <Grid className='flex flex-row mt-5'>
+        <Grid container columns={16} className='flex flex-col mt-5 lg:flex-row'>
+          <Grid lg={1} className=' bg-[#CBF2DC]  h-28 lg:h-28  '>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Reach to Pickup Point <br />
+                  10 KMs <br />
+                  20 Mins
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full bg-[#CBF2DC]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={1} className=' bg-[#C2EEF4]  h-28 lg:h-32 '>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Loading Truck <br />
+                  20 Mins
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full bg-[#C2EEF4]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={3} className=' bg-[#FFE8D2] h-28 lg:h-32'>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Driving to Point 1 - Avenue Garden ABC
+                  <br />
+                  100 Kms
+                  <br />3 Hrs
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full hover:bg-[#FFE8D2]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={1} className=' bg-[#c2eef4] h-28 lg:h-32'>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Unloading Truck <br />
+                  20 Mins
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full hover:bg-[#c2eef4]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={1} className=' bg-[#cfd0d4]  h-28 lg:h-32'>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Lunch Break <br />
+                  20 Mins
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full hover:bg-[#cfd0d4]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={3} className=' bg-[#F9D4B1] h-28 lg:h-32'>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Driving to Point 2 - Hilland View <br />
+                  200 KMs <br />4 Hrs
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full hover:bg-[#F9D4B1]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={1} className=' bg-[#C2EEF4] h-28 lg:h-32 '>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Unloading Truck <br />
+                  20 Mins
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full hover:bg-[#C2EEF4]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={1} className=' bg-[#E7E7E9] h-28 lg:h-32 '>
+            <Tooltip
+              title={
+                <React.Fragment>
+                  Lunch Break <br />
+                  20 Mins
+                </React.Fragment>
+              }
+              arrow
+            >
+              <Button fullWidth className='h-full hover:bg-[#E7E7E9]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={1} className=' bg-[#F7E0CA]  h-28 lg:h-32'>
+            <Tooltip title='Add' arrow>
+              <Button fullWidth className='h-full hover:bg-[#F7E0CA]'></Button>
+            </Tooltip>
+          </Grid>
+          <Grid lg={3} className=' bg-[#CFD0D4] h-28 lg:h-32 '>
+            <Tooltip title='Available Slot' arrow>
+              <Button fullWidth className='h-full hover:bg-[#CFD0D4]'></Button>
+            </Tooltip>
+          </Grid>
         </Grid>
-        <Grid lg={1} className='h-full bg-[#C2EEF4] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Loading Truck <br />
-                20 Mins
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full bg-[#C2EEF4]'></Button>
-          </Tooltip>
-        </Grid>
-        <Grid lg={3} className='h-full bg-[#FFE8D2] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Driving to Point 1 - Avenue Garden ABC
-                <br />
-                100 Kms
-                <br />3 Hrs
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full hover:bg-[#FFE8D2]'></Button>
-          </Tooltip>
-        </Grid>
-        <Grid lg={1} className='h-full bg-[#c2eef4] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Unloading Truck <br />
-                20 Mins
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full hover:bg-[#c2eef4]'></Button>
-          </Tooltip>
-        </Grid>
-        <Grid lg={1} className='h-full bg-[#cfd0d4] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Lunch Break <br />
-                20 Mins
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full hover:bg-[#cfd0d4]'></Button>
-          </Tooltip>
-        </Grid>
-        <Grid lg={3} className='h-full bg-[#F9D4B1] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Driving to Point 2 - Hilland View <br />
-                200 KMs <br />4 Hrs
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full hover:bg-[#F9D4B1]'></Button>
-          </Tooltip>
-        </Grid>
-        <Grid lg={1} className='h-full bg-[#C2EEF4] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Unloading Truck <br />
-                20 Mins
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full hover:bg-[#C2EEF4]'></Button>
-          </Tooltip>
-        </Grid>
-        <Grid lg={1} className='h-full bg-[#E7E7E9] '>
-          <Tooltip
-            title={
-              <React.Fragment>
-                Lunch Break <br />
-                20 Mins
-              </React.Fragment>
-            }
-            arrow
-          >
-            <Button fullWidth className='h-full hover:bg-[#E7E7E9]'></Button>
-          </Tooltip>
-        </Grid>
-
-        <Grid lg={1} className='h-full bg-[#F7E0CA] '>
-          <Tooltip title='Add' arrow>
-            <Button fullWidth className='h-full hover:bg-[#F7E0CA]'></Button>
-          </Tooltip>
-        </Grid>
-        <Grid lg={3} className='h-full bg-[#CFD0D4] '>
-          <Tooltip title='Available Slot' arrow>
-            <Button fullWidth className='h-full hover:bg-[#CFD0D4]'></Button>
-          </Tooltip>
+        <Grid className='flex flex-col gap-5 mt-5 lg:hidden '>
+          <React.Fragment>
+            <Grid className='flex flex-col gap-5'>
+              {timeIntervals1.map((time, index) => (
+                <Typography variant='body2' key={index}>
+                  {time}
+                </Typography>
+              ))}
+            </Grid>
+            <Grid className='flex flex-col gap-5'>
+              {timeIntervals2.map((time, index) => (
+                <Typography variant='body2' key={index}>
+                  {time}
+                </Typography>
+              ))}
+            </Grid>
+          </React.Fragment>
         </Grid>
       </Grid>
-      <Grid className='flex gap-5'>
+
+      <Grid className='flex-wrap hidden gap-5 lg:flex md:flex-row'>
         <React.Fragment>
-          <Grid className='flex gap-5'>
+          <Grid className='flex flex-wrap gap-5'>
             {timeIntervals1.map((time, index) => (
               <Typography variant='body2' key={index}>
                 {time}
               </Typography>
             ))}
           </Grid>
-          <Grid className='flex gap-5'>
+          <Grid className='flex flex-wrap gap-5'>
             {timeIntervals2.map((time, index) => (
               <Typography variant='body2' key={index}>
                 {time}
@@ -1029,7 +1050,6 @@ const StmsRouteplanning = () => {
           </Grid>
         </React.Fragment>
       </Grid>
-      <Grid></Grid>
     </Box>
   )
 }
